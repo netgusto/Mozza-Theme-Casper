@@ -1,0 +1,26 @@
+{
+    "name": "netgusto/mozza-theme-casper",
+    "version": "1.0.0",
+    "type": "package",
+    "description": "The Casper Theme from Ghost, adapted to Mozza",
+    "keywords": ["silex", "theme", "mozza", "casper", "ghost"],
+    "homepage": "https://github.com/netgusto/mozza-theme-casper",
+    "license": "MIT",
+    "authors": [
+        {
+          "name": "Net Gusto",
+          "email": "contact@netgusto.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+    },
+    "suggest": {
+    },
+    "autoload": {},
+    "target-dir": "",
+    "extra": {
+    }
+}

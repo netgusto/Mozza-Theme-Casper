@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {% if post is defined %}{{ component_metatags(post) }}
+    {% else %}{{ component_metatags() }}
+    {% endif %}
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="{{ app.request.basepath }}/vendor/netgusto/mozza-theme-casper/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="{{ app.request.basepath }}/vendor/netgusto/mozza-theme-casper/assets/css/mozza.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
+</head>
+<body class="{% block bodyclass %}home-template{% endblock %}">
+
+    {#{% block header %}
+    {% include '@Custom/header.html.twig' %}
+    {% endblock header %}#}
+
+    {% block body %}
+    {% endblock body %}
+
+    {#{% block footer %}
+    {% include '@Custom/footer.html.twig' %}
+    {% endblock footer %}#}
+
+    <footer class="site-footer">
+        <a class="subscribe icon-feed" href="{{ path('rss') }}"><span class="tooltip">Subscribe!</span></a>
+        <div class="inner">
+             <section class="copyright">All content copyright <a href="{{ path('home') }}/">{{ site.title }}</a> &copy; {{ 'now'|date('Y') }} &bull; All rights reserved.</section>
+             <section class="poweredby">Proudly published with Mozza</section>
+        </div>
+    </footer>
+
+    <script src="{{ app.request.basepath }}/vendor/jquery/jquery/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="{{ app.request.basepath }}/vendor/netgusto/mozza-theme-casper/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="{{ app.request.basepath }}/vendor/netgusto/mozza-theme-casper/assets/js/index.js"></script>
+
+    {{ component_googleanalytics() }}
+</body>
+</html>

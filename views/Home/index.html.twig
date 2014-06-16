@@ -1,0 +1,48 @@
+{% extends '@MozzaTheme/base.html.twig' %}
+
+{% block bodyclass %}home-template{% endblock %}
+{% block body %}
+
+<header class="site-head" style="background-image: url({{ site.images.cover|toresourceurl }})">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            {% if site.images.logo %}
+                <a class="blog-logo" href="{{ path('home') }}"><img src="{{ site.images.logo|toresourceurl }}" alt="{{ site.title }}" /></a>
+            {% endif %}
+            <h1 class="blog-title">{{ site.title }}</h1>
+            <h2 class="blog-description">{{ site.description }}</h2>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+
+    {% for post in posts %}
+        {% set posturl = posturl(post.slug)|toabsoluteurl %}
+        <article class="post">
+            <header class="post-header">
+                <span class="post-meta"><time datetime="{{ post.date|date('Y-m-d') }}">{{ post.date|date(config.date.format) }}</time>
+                {% if post.about|length %} on
+                    {% if post.about|length == 1 %}
+                        {{ post.about|first }}
+                    {% else %}
+                        {{ post.about|slice(0, -1)|join(', ') }} and {{ post.about|slice(-1)|join('') }}
+                    {% endif %}
+                {% endif %}
+                </span>
+                <h2 class="post-title"><a href="{{ posturl }}">{{ post.title }}</a></h2>
+            </header>
+            <section class="post-excerpt">
+                <p>
+                    <a class="read-more" href="{{ posturl }}">
+                        {{ post.intro|inlinemarkdown }} &mdash; {{ post.content|markdown|striptags|truncate(260, true, '') }} &hellip;
+                    </a>
+                </p>
+            </section>
+        </article>
+    {% endfor %}
+
+    {% include "@MozzaTheme/Components/Pagination/index.html.twig" with { page: page, nbpages: nbpages } %}
+
+</main>
+{% endblock %}

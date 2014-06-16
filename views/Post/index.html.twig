@@ -1,0 +1,70 @@
+{% extends '@MozzaTheme/base.html.twig' %}
+
+{% block bodyclass %}post-template{% endblock %}
+
+{% block body %}
+{% set posturl = posturl(post.slug)|toabsoluteurl %}
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <a class="blog-logo" href="{{ path('home') }}">
+                {% if site.images.logo %}
+                    <a class="blog-logo" href="{{ path('home') }}"><img src="{{ site.images.logo|toresourceurl }}" alt="{{ site.title }}" /></a>
+                {% endif %}
+                <span class="blog-title">{{ site.title }}</span>
+            </a>
+        </header>
+
+        <span class="post-meta"><time datetime="{{ post.date|date('Y-m-d') }}">{{ post.date|date(config.date.format) }}</time>
+            {% if post.about|length %} on
+                {% if post.about|length == 1 %}
+                    {{ post.about|first }}
+                {% else %}
+                    {{ post.about|slice(0, -1)|join(', ') }} and {{ post.about|slice(-1)|join('') }}
+                {% endif %}
+            {% endif %}
+        </span>
+
+        <h1 class="post-title">{{ post.title }}</h1>
+
+        <section class="post-content">
+            {{ post.intro|markdown }}
+
+            {{ post.content|markdown }}
+        </section>
+
+        <footer class="post-footer">
+
+            <section class="author">
+                <h4>{{ post.author }}</h4>
+                {#<p>{{author.bio}}</p>#}
+                <ul class="author-meta clearfix">
+                    {#{{#if author.location}}<li>{{author.location}}</li>{{/if}}
+                    {{#if author.website}}<li><a href="{{author.website}}">{{author.website}}</a></li>{{/if}}#}
+                </ul>
+            </section>
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text={{ post.title }}&amp;url={{ posturl }}"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ posturl }}"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url={{ posturl }}"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+    </article>
+
+</main>
+{% endblock %}
