@@ -8,14 +8,7 @@
 
     <article class="post">
 
-        <header class="post-header">
-            <a class="blog-logo" href="{{ path('home') }}">
-                {% if site.images.logo %}
-                    <a class="blog-logo" href="{{ path('home') }}"><img src="{{ site.images.logo|toresourceurl }}" alt="{{ site.title }}" /></a>
-                {% endif %}
-                <span class="blog-title">{{ site.title }}</span>
-            </a>
-        </header>
+        {% include '@MozzaTheme/Components/PostHeader/index.html.twig' %}
 
         <span class="post-meta"><time datetime="{{ post.date|date('Y-m-d') }}">{{ post.date|date(config.date.format) }}</time>
             {% if post.about|length %} on

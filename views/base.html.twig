@@ -17,22 +17,17 @@
 </head>
 <body class="{% block bodyclass %}home-template{% endblock %}">
 
-    {#{% block header %}
-    {% include '@Custom/header.html.twig' %}
-    {% endblock header %}#}
-
     {% block body %}
     {% endblock body %}
-
-    {#{% block footer %}
-    {% include '@Custom/footer.html.twig' %}
-    {% endblock footer %}#}
 
     <footer class="site-footer">
         <a class="subscribe icon-feed" href="{{ path('rss') }}"><span class="tooltip">Subscribe!</span></a>
         <div class="inner">
-             <section class="copyright">All content copyright <a href="{{ path('home') }}/">{{ site.title }}</a> &copy; {{ 'now'|date('Y') }} &bull; All rights reserved.</section>
-             <section class="poweredby">Proudly published with Mozza</section>
+             {% block footer %}
+                {% include '@Custom/footer.html.twig' %}
+            {% endblock footer %}
+            <section class="copyright">All content copyright <a href="{{ path('home') }}">{{ site.title }}</a> &copy; {{ 'now'|date('Y') }} &bull; All rights reserved.</section>
+            <section class="poweredby">Proudly published with <a href="http://netgusto.com/mozza">Mozza</a></section>
         </div>
     </footer>
 

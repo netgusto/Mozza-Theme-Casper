@@ -1,0 +1,23 @@
+{% extends '@MozzaTheme/base.html.twig' %}
+
+{% block bodyclass %}post-template{% endblock %}
+
+{% block body %}
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        {% include '@MozzaTheme/Components/PostHeader/index.html.twig' %}
+
+        <h1 class="post-title">{% block title %}Le title{% endblock %}</h1>
+
+        <section class="post-content">
+            {% block content %}<h2>Le content</h2>{% endblock %}
+        </section>
+
+    </article>
+
+</main>
+
+{% endblock %}
