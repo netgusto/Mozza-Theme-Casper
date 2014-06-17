@@ -32,10 +32,10 @@
 
             <section class="author">
                 <h4>{{ post.author }}</h4>
-                {#<p>{{author.bio}}</p>#}
+                <p>{{ post.bio }}</p>
                 <ul class="author-meta clearfix">
-                    {#{{#if author.location}}<li>{{author.location}}</li>{{/if}}
-                    {{#if author.website}}<li><a href="{{author.website}}">{{author.website}}</a></li>{{/if}}#}
+                    {#{{#if author.location}}<li>{{author.location}}</li>{{/if}#}
+                    {% if post.website is defined and post.website|length %}<li><a href="{{ post.website }}">{{ post.website }}</a></li>{% endif %}
                 </ul>
             </section>
 
@@ -56,6 +56,8 @@
             </section>
 
         </footer>
+
+        {{ component_disqus(post) }}
 
     </article>
 
