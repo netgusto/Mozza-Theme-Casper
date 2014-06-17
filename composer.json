@@ -1,6 +1,6 @@
 {
     "name": "netgusto/mozza-theme-casper",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "type": "package",
     "description": "The Casper Theme from Ghost, adapted to Mozza",
     "keywords": ["silex", "theme", "mozza", "casper", "ghost"],
