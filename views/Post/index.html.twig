@@ -10,7 +10,7 @@
 
         {% include '@MozzaTheme/Components/PostHeader/index.html.twig' %}
 
-        <span class="post-meta"><time datetime="{{ post.date|date('Y-m-d') }}">{{ post.date|date(config.date.format) }}</time>
+        <span class="post-meta"><time datetime="{{ post.date|date('Y-m-d') }}">{{ post.date|humandate }}</time>
             {% if post.about|length %} on
                 {% if post.about|length == 1 %}
                     {{ post.about|first }}
