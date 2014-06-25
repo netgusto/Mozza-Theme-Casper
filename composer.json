@@ -1,6 +1,6 @@
 {
     "name": "netgusto/pulpy-theme-casper",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "type": "package",
     "description": "The Casper Theme from Ghost, adapted to Pulpy",
     "keywords": ["silex", "theme", "pulpy", "casper", "ghost"],
