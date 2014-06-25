@@ -1,10 +1,10 @@
 {
-    "name": "netgusto/mozza-theme-casper",
+    "name": "netgusto/pulpy-theme-casper",
     "version": "1.0.5",
     "type": "package",
-    "description": "The Casper Theme from Ghost, adapted to Mozza",
-    "keywords": ["silex", "theme", "mozza", "casper", "ghost"],
-    "homepage": "https://github.com/netgusto/mozza-theme-casper",
+    "description": "The Casper Theme from Ghost, adapted to Pulpy",
+    "keywords": ["silex", "theme", "pulpy", "casper", "ghost"],
+    "homepage": "https://github.com/netgusto/pulpy-theme-casper",
     "license": "MIT",
     "authors": [
         {
