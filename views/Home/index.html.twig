@@ -3,14 +3,14 @@
 {% block bodyclass %}home-template{% endblock %}
 {% block body %}
 
-<header class="site-head" style="background-image: url({{ site.imagecover|toresourceurl }})">
+<header class="site-head" style="background-image: url({{ siteconfig().imagecover|toresourceurl }})">
     <div class="vertical">
         <div class="site-head-content inner">
-            {% if site.imagelogo %}
-                <a class="blog-logo" href="{{ path('home') }}"><img src="{{ site.imagelogo|toresourceurl }}" alt="{{ site.title }}" /></a>
+            {% if siteconfig().imagelogo %}
+                <a class="blog-logo" href="{{ path('home') }}"><img src="{{ siteconfig().imagelogo|toresourceurl }}" alt="{{ siteconfig().title }}" /></a>
             {% endif %}
-            <h1 class="blog-title">{{ site.title }}</h1>
-            <h2 class="blog-description">{{ site.description }}</h2>
+            <h1 class="blog-title">{{ siteconfig().title }}</h1>
+            <h2 class="blog-description">{{ siteconfig().description }}</h2>
         </div>
     </div>
 </header>

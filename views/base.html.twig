@@ -26,10 +26,8 @@
     <footer class="site-footer">
         <a class="subscribe icon-feed" href="{{ path('rss') }}"><span class="tooltip">Subscribe!</span></a>
         <div class="inner">
-             {% block footer %}
-                {% include '@Custom/footer.html.twig' %}
-            {% endblock footer %}
-            <section class="copyright">All content copyright <a href="{{ path('home') }}">{{ site.title }}</a> &copy; {{ 'now'|date('Y') }} &bull; All rights reserved.</section>
+            {% block footer %}{% endblock footer %}
+            <section class="copyright">All content copyright <a href="{{ path('home') }}">{{ siteconfig().title }}</a> &copy; {{ 'now'|date('Y') }} &bull; All rights reserved.</section>
             <section class="poweredby">Proudly published with <a href="http://netgusto.com/pulpy">Pulpy</a></section>
         </div>
     </footer>

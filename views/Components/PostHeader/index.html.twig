@@ -1,8 +1,8 @@
 <header class="post-header">
     <a class="blog-logo" href="{{ path('home') }}">
-        {% if site.imagelogo %}
-            <a class="blog-logo" href="{{ path('home') }}"><img src="{{ site.imagelogo|toresourceurl }}" alt="{{ site.title }}" /></a>
+        {% if siteconfig().imagelogo %}
+            <a class="blog-logo" href="{{ path('home') }}"><img src="{{ siteconfig().imagelogo|toresourceurl }}" alt="{{ siteconfig().title }}" /></a>
         {% endif %}
-        <span class="blog-title">{{ site.title }}</span>
+        <span class="blog-title">{{ siteconfig().title }}</span>
     </a>
 </header>
