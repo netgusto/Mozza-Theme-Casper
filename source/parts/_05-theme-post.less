@@ -1,0 +1,102 @@
+.theme-post() {
+    .post-template {
+        .content {
+            overflow: hidden;
+        }
+        .post {
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .post:after {
+            display: none;
+        }
+        .post-header {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .blog-title {
+            display: inline-block;
+            padding: 2.5rem 0;
+        }
+    }
+    .post-content {
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            padding: 0.6em 0;
+        }
+        .full-img {
+            width: 126%;
+            max-width: none;
+            margin: 0 -13%;
+        }
+    }
+    .post-footer {
+        position: relative;
+        margin: 4rem 0 0 0;
+        padding: 4rem 0 0 0;
+        border-top: #EBF2F6 1px solid;
+        h4 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+        p {
+            margin: 1rem 0;
+            font-size: 1.4rem;
+            line-height: 1.6em;
+        }
+        .author {
+            margin-right: 180px;
+        }
+        .share {
+            position: absolute;
+            top: 4rem;
+            right: 0;
+            width: 140px;
+            a {
+                font-size: 1.8rem;
+                display: inline-block;
+                margin: 1rem 1.6rem 1.6rem 0;
+                color: #BBC7CC;
+                text-decoration: none;
+            }
+            a:hover {
+                color: #50585D;
+            }
+        }
+    }
+    .author-meta {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        font-size: 1.4rem;
+        line-height: 1;
+        font-style: italic;
+        color: #9EABB3;
+        li {
+            float: left;
+            margin-left: 10px;
+        }
+        li:before {
+            content: "•";
+            display: inline-block;
+            margin-right: 10px;
+            color: #BBC7CC;
+        }
+        li:first-child {
+            margin-left: 0;
+        }
+        li:first-child:before {
+            display: none;
+        }
+        a {
+            color: #9EABB3;
+        }
+        a:hover {
+            color: #57A3E8;
+        }
+    }
+}
